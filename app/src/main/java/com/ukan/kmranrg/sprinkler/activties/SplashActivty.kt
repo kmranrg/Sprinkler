@@ -22,8 +22,6 @@ class SplashActivty : AppCompatActivity() {
 
     var permissionsString = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.MODIFY_AUDIO_SETTINGS,
-            Manifest.permission.READ_PHONE_STATE,
-            Manifest.permission.PROCESS_OUTGOING_CALLS,
             Manifest.permission.RECORD_AUDIO)
 
     override fun onCreate(savedInstanceState: Bundle?) {

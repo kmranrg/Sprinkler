@@ -26,9 +26,6 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 
-/**
- * Created by ADMIN on 6/19/2017.
- */
 class MainScreenFragment : Fragment() {
 
     var getSongsList: ArrayList<Songs>? = null

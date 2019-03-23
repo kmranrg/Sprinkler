@@ -27,9 +27,7 @@ import com.ukan.kmranrg.sprinkler.models.Songs
 import com.ukan.kmranrg.sprinkler.utils.CurrentSongHelper
 
 
-/**
- * Created by Shantanu Johri on 20-06-2017.
- */
+
 class FavouriteFragment : Fragment() {
 
     var noFavourites: TextView? = null

@@ -58,7 +58,7 @@ class MainScreenAdapter(_songDetails: ArrayList<Songs>, _context: Context) : Rec
             songPlayingFragment.arguments = args
             (mContext as FragmentActivity).supportFragmentManager.beginTransaction()
                     .replace(R.id.details_fragment, songPlayingFragment)
-                    .addToBackStack("SongPlayingFragmento")
+                    .addToBackStack("SongPlayingFragment")
                     .commit()
         })
     }
