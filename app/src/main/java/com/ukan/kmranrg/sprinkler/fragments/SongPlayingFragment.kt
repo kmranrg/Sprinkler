@@ -521,6 +521,7 @@ class SongPlayingFragment : Fragment() {
                 currentSongHelper.isPlaying = true
                 playpauseImageButton?.setBackgroundResource(R.drawable.ic_play_button)
                 mediaPlayer?.pause()
+
             } else {
                 currentSongHelper.isPlaying = false
                 playpauseImageButton?.setBackgroundResource(R.drawable.ic_pause_button)

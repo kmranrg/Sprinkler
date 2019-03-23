@@ -49,9 +49,9 @@ class SettingsFragment : Fragment() {
         val prefs = _activity?.getSharedPreferences(SettingsFragment.Statified.MY_PREFS_NAME, MODE_PRIVATE)
         val isAllowed = prefs?.getBoolean("feature", false)
         if (isAllowed as Boolean) {
-            shakeSwitch?.setChecked(true)
+            shakeSwitch?.isChecked = true
         } else {
-
+            shakeSwitch?.isChecked = false
         }
         shakeSwitch?.setOnCheckedChangeListener({ compoundButton, b ->
             if (b) {
@@ -82,5 +82,4 @@ class SettingsFragment : Fragment() {
         }
 
     }
-
 }
