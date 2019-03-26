@@ -49,8 +49,7 @@ class SplashActivty : AppCompatActivity() {
             131 -> {
                 if (grantResults.isNotEmpty()
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED
-                        && grantResults[2] == PackageManager.PERMISSION_GRANTED && grantResults[3] == PackageManager.PERMISSION_GRANTED &&
-                        grantResults[4] == PackageManager.PERMISSION_GRANTED) {
+                        && grantResults[2] == PackageManager.PERMISSION_GRANTED) {
                     Handler().postDelayed({
                         /* Create an Intent that will start the Menu-Activity. */
                         val mainIntent = Intent(this@SplashActivty, MainActivity::class.java)
