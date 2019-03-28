@@ -142,6 +142,9 @@ class SongPlayingFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         audioV?.onResume()
+        mSensorManager?.registerListener(mSensorListener,
+                mSensorManager?.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+                SensorManager.SENSOR_DELAY_NORMAL)
         if (mediaPlayer?.isPlaying() as Boolean) {
             currentSongHelper.isPlaying = true
             playpauseImageButton?.setBackgroundResource(R.drawable.ic_pause_button)
@@ -155,9 +158,6 @@ class SongPlayingFragment : Fragment() {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
         mSensorManager = activity.getSystemService(Context.SENSOR_SERVICE) as SensorManager
-        mSensorManager?.registerListener(mSensorListener,
-                mSensorManager?.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
-                SensorManager.SENSOR_DELAY_NORMAL)
         mAccel = 0.00f
         mAccelCurrent = SensorManager.GRAVITY_EARTH
         mAccelLast = SensorManager.GRAVITY_EARTH

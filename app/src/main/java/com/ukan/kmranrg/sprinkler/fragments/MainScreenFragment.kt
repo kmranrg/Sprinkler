@@ -20,6 +20,7 @@ import com.ukan.kmranrg.sprinkler.R
 import com.ukan.kmranrg.sprinkler.R.id.action_sort_recent
 import com.ukan.kmranrg.sprinkler.adapters.MainScreenAdapter
 import com.ukan.kmranrg.sprinkler.fragments.MainScreenFragment.Statified.mMediaPlayer
+import com.ukan.kmranrg.sprinkler.fragments.SongPlayingFragment.Statified.mediaPlayer
 import com.ukan.kmranrg.sprinkler.models.Songs
 import com.ukan.kmranrg.sprinkler.utils.CurrentSongHelper
 import java.util.*
@@ -232,7 +233,7 @@ class MainScreenFragment : Fragment() {
         playPauseButton?.setOnClickListener({
             if (playPauseHelper?.isPlaying as Boolean) {
                 SongPlayingFragment.Statified.mediaPlayer?.pause()
-                playPauseHelper?.TrackPosition = SongPlayingFragment.Statified.mediaPlayer?.getCurrentPosition()!!
+                playPauseHelper?.TrackPosition = mediaPlayer?.getCurrentPosition() as Int
                 playPauseHelper?.isPlaying = false
                 playPauseButton?.setBackgroundResource(R.drawable.ic_play_button)
             } else {
