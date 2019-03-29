@@ -202,49 +202,36 @@ class MainScreenFragment : Fragment() {
 
     }
 
+
     fun bottomBarClickHandlers() {
 
         nowPlayingBottomBar?.setOnClickListener({
-
-
-            try {
-                mMediaPlayer = SongPlayingFragment.Statified.mediaPlayer
-                val songPlayingFragment = SongPlayingFragment()
-                val _fetch_from_Songs_Fragment = SongPlayingFragment.Statified.fetchSongs
-                val args = Bundle()
-
-                args.putString("BottomBar", "true")
-                args.putString("songTitle", SongPlayingFragment.Statified.currentSongHelper.songTitle)
-                args.putString("songArtist", SongPlayingFragment.Statified.currentSongHelper.songArtist)
-                args.putInt("songPosition", SongPlayingFragment.Statified.currentSongHelper.currentPosition)
-                args.putInt("SongId", SongPlayingFragment.Statified.currentSongHelper.songId.toInt())
-                args.putParcelableArrayList("songsData", _fetch_from_Songs_Fragment)
-                songPlayingFragment.arguments = args
-                fragmentManager.beginTransaction()
-                        .replace(R.id.details_fragment, songPlayingFragment)
-                        .addToBackStack("MainScreenFragment")
-                        .commit()
-            }catch(e: Exception) {
-                Toast.makeText(activity, "Something went wrong", Toast.LENGTH_SHORT).show()
-                e.printStackTrace()
-            }
+            mMediaPlayer = SongPlayingFragment.Statified.mediaPlayer
+            val songPlayingFragment = SongPlayingFragment()
+            var args = Bundle()
+            args.putString("songArtist", SongPlayingFragment.Statified.currentSongHelper.songArtist)
+            args.putString("path", SongPlayingFragment.Statified.currentSongHelper.songPath)
+            args.putString("songTitle", SongPlayingFragment.Statified.currentSongHelper.songTitle)
+            args.putInt("SongId", SongPlayingFragment.Statified.currentSongHelper.songId.toInt())
+            args.putInt("songPosition", SongPlayingFragment.Statified.currentSongHelper.currentPosition.toInt())
+            args.putParcelableArrayList("songsData", SongPlayingFragment.Statified.fetchSongs)
+            songPlayingFragment.arguments = args
+            args.putString("BottomBar", "true")
+            fragmentManager.beginTransaction()
+                    .replace(R.id.details_fragment, songPlayingFragment)
+                    .addToBackStack("SongPlayingFragment")
+                    .commit()
         })
-
         playPauseButton?.setOnClickListener({
-            if (playPauseHelper?.isPlaying as Boolean) {
+            if (SongPlayingFragment.Statified.mediaPlayer?.isPlaying as Boolean) {
                 SongPlayingFragment.Statified.mediaPlayer?.pause()
-                playPauseHelper?.TrackPosition = mediaPlayer?.getCurrentPosition() as Int
-                playPauseHelper?.isPlaying = false
+                playPauseHelper?.TrackPosition = SongPlayingFragment.Statified.mediaPlayer?.currentPosition as Int
                 playPauseButton?.setBackgroundResource(R.drawable.ic_play_button)
             } else {
                 SongPlayingFragment.Statified.mediaPlayer?.seekTo((playPauseHelper as CurrentSongHelper).TrackPosition)
                 SongPlayingFragment.Statified.mediaPlayer?.start()
-                playPauseHelper?.isPlaying = true
                 playPauseButton?.setBackgroundResource(R.drawable.ic_pause_button)
             }
         })
-
     }
-
-
 }

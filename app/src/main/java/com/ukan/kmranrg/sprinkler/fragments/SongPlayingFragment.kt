@@ -145,13 +145,6 @@ class SongPlayingFragment : Fragment() {
         mSensorManager?.registerListener(mSensorListener,
                 mSensorManager?.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
                 SensorManager.SENSOR_DELAY_NORMAL)
-        if (mediaPlayer?.isPlaying() as Boolean) {
-            currentSongHelper.isPlaying = true
-            playpauseImageButton?.setBackgroundResource(R.drawable.ic_pause_button)
-        } else {
-            currentSongHelper.isPlaying = false
-            playpauseImageButton?.setBackgroundResource(R.drawable.ic_play_button)
-        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -518,12 +511,12 @@ class SongPlayingFragment : Fragment() {
         })
         playpauseImageButton?.setOnClickListener {
             if (mediaPlayer?.isPlaying as Boolean) {
-                currentSongHelper.isPlaying = true
+                currentSongHelper.isPlaying = false
                 playpauseImageButton?.setBackgroundResource(R.drawable.ic_play_button)
                 mediaPlayer?.pause()
 
             } else {
-                currentSongHelper.isPlaying = false
+                currentSongHelper.isPlaying = true
                 playpauseImageButton?.setBackgroundResource(R.drawable.ic_pause_button)
                 mediaPlayer?.seekTo(seekbar?.progress as Int)
                 mediaPlayer?.start()
