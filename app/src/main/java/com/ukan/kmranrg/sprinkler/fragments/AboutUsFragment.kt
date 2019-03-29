@@ -25,9 +25,9 @@ class AboutUsFragment : Fragment() {
     @Nullable
     override fun onCreateView(inflater: LayoutInflater?, @Nullable container: ViewGroup?, @Nullable savedInstanceState: Bundle?): View? {
         val view = inflater!!.inflate(R.layout.fragment_about_us, container, false)
-        activity.title = "About us"
+        activity.title = "About Developer"
         aboutUs = view.findViewById<TextView>(R.id.about_us_text) as TextView
-        (aboutUs as TextView).text = "Hey there, I am Kumar Anurag, the cheif developer of ukan. This is completely an offline app. You can listen all songs from this music player. Enjoy music on Sprinkler\n\n Website: kmranrg.github.io/MyBlog\nContribute To: paypal.me/kmranrg\n"
+        (aboutUs as TextView).text = "Hey there, I am Kumar Anurag, the Chief Developer of Ukan. This is completely an offline app. You can listen all songs from this MusicPlayer. Happy Sprinkling !\n\n Instagram ID: kmranrg\nContribute To: paypal.me/kmranrg\n"
 
         return view
     }

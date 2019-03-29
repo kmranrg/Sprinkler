@@ -27,7 +27,6 @@ import com.ukan.kmranrg.sprinkler.models.Songs
 import com.ukan.kmranrg.sprinkler.utils.CurrentSongHelper
 
 
-
 class FavouriteFragment : Fragment() {
 
     var noFavourites: TextView? = null

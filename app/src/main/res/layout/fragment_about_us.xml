@@ -18,7 +18,7 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/joey" />
+            android:background="@drawable/anurag" />
 
         <TextView
             android:id="@+id/about_us_text"
