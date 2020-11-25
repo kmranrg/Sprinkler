@@ -308,7 +308,7 @@ class SongPlayingFragment : Fragment() {
                     }
                     mediaPlayer?.reset()
                     try {
-                        mediaPlayer?.setDataSource(activity, Uri.parse(nextSong.songData))
+                        mediaPlayer?.setDataSource(activity!!, Uri.parse(nextSong.songData))
                         mediaPlayer?.prepare()
                         mediaPlayer?.start()
                         songArtist?.text = nextSong.artist
@@ -373,7 +373,7 @@ class SongPlayingFragment : Fragment() {
             }
             mediaPlayer?.reset()
             try {
-                mediaPlayer?.setDataSource(activity, Uri.parse(currentSongHelper.songPath))
+                mediaPlayer?.setDataSource(activity!!, Uri.parse(currentSongHelper.songPath))
                 mediaPlayer?.prepare()
                 mediaPlayer?.start()
                 if (nextSong.artist.equals("<unknown>", true)) {

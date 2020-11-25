@@ -27,7 +27,7 @@ class AboutUsFragment : Fragment() {
         val view = inflater!!.inflate(R.layout.fragment_about_us, container, false)
         activity.title = "About Developer"
         aboutUs = view.findViewById<TextView>(R.id.about_us_text) as TextView
-        (aboutUs as TextView).text = "Hey there, I am Kumar Anurag, the Chief Developer of Ukan. This is completely an offline app. You can listen all songs from this MusicPlayer. Happy Sprinkling !\n\n Instagram ID: kmranrg\nContribute To: paypal.me/kmranrg\n"
+        (aboutUs as TextView).text = "Hey there, I am Kumar Anurag, the Chief Developer of Ukan. This is completely an offline app. You can listen all songs from this MusicPlayer. Happy Sprinkling !\n\n Instagram ID: kmranrg\n"
 
         return view
     }
